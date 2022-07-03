@@ -1,12 +1,11 @@
-export default class Slider {
-  constructor(page, btns) {
-    this.page = document.querySelector(page);
-    this.slides = Array.from(this.page.children);
-    this.btns = this.page.querySelectorAll(btns);
-    this.slideIndex = 1;
-  }
+import Slider from "./slider";
 
-  showSlides(n) {
+export default class MainSlider extends Slider {
+   constructor(page, btns) {
+    super(page, btns);
+   }
+
+   showSlides(n) {
     if (n > this.slides.length) {
         this.slideIndex = 1;
     }
@@ -64,5 +63,5 @@ export default class Slider {
     });
 
     this.showSlides(this.slideIndex);
-  }
+  } 
 }
