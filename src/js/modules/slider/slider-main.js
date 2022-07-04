@@ -1,8 +1,8 @@
 import Slider from "./slider";
 
 export default class MainSlider extends Slider {
-   constructor(page, btns) {
-    super(page, btns);
+   constructor(container, btns) {
+    super(container, btns);
    }
 
    showSlides(n) {
@@ -27,15 +27,19 @@ export default class MainSlider extends Slider {
       }
     } 
     catch (e) {}
-   
+    
+  for (let slide of this.slides) {        
+    slide.style.display = 'none';
+    slide.classList.add('animated','slideInDown');
+  }
 
     // for(let i = 0; i<=this.slides.length-1;i++) {
     //   this.slides[i].style.display = 'none';
     // }
-    this.slides.forEach(slide => {
-        slide.style.display = 'none';
-        slide.classList.add('animated','slideInDown');
-    });
+    // this.slides.forEach(slide => {
+    //     slide.style.display = 'none';
+    //     slide.classList.add('animated','slideInDown');
+    // });
 
     this.slides[this.slideIndex - 1].style.display = 'block';
   }
