@@ -6,7 +6,6 @@ export default class MiniSlider extends Slider {
   }
 
   decorizeSlides () {
-    console.log(this.slides);
     for(let slide of this.slides) {
       if(this.activeClass) {
       slide.classList.remove(this.activeClass);}
