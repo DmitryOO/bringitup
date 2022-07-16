@@ -12,9 +12,10 @@ export default class Slider {
     } catch(e) {}
     this.slideIndex = 1;
     try{this.slides = this.container.children;} catch(e) {}
-    
-    this.prev = document.querySelector(prev);
-    this.next = document.querySelector(next);
+    try{this.prev = document.querySelectorAll(prev);
+    }catch(e){}
+    try{this.next = document.querySelectorAll(next);
+    } catch(e) {}
     this.activeClass = activeClass;
     this.animate = animate;
     this.autoplay = autoplay;
