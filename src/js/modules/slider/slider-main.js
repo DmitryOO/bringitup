@@ -50,15 +50,16 @@ export default class MainSlider extends Slider {
 
   bindTriggers() {
     this.btns.forEach((btn)=>{
+      console.log(btn);
       btn.addEventListener('click', ()=>{
         this.plusSlide(1);  
       });
-
+      if (btn.parentNode.previousElementSibling.hasAttribute('href')){
       btn.parentNode.previousElementSibling.addEventListener('click', (e)=> {
         e.preventDefault();
         this.slideIndex = 1;
         this.showSlides(this.slideIndex);
-      });
+      });}
     });
 
     document.querySelectorAll('.prevmodule').forEach((item) => {
